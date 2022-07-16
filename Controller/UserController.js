@@ -7,7 +7,7 @@ module.exports = class UserController {
         res.status(200).send(UserService.getUsers())
     }
 
-    static async save(req, res) {
-        res.status(200).send(UserService.save(req.body))
+    static async saveUser(req, res) {
+        res.status(200).send(UserService.saveUser(req.body))
     }
 }

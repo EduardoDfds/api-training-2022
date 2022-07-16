@@ -3,10 +3,10 @@ const TrainingService = require("../service/TrainingService")
 
 module.exports = class TrainingService {
     static async getTrainings(req, res) {
-        res.status(200).send(TrainingService.getUsers())
+        res.status(200).send(TrainingService.getTrainings())
     }
 
     static async saveTraining(req, res) {
-        res.status(200).send(TrainingService.save(req.body))
+        res.status(200).send(TrainingService.saveTraining(req.body))
     }
 }

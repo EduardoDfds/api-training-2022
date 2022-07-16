@@ -3,7 +3,7 @@ module.exports = class TrainingService {
     static getTrainings() {
         return { trainings: trainings }
     }
-    static saveTrainings(training) {
+    static saveTraining(training) {
         trainings.push(training)
         return { training: training }
     }

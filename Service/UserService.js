@@ -3,7 +3,7 @@ module.exports = class UserService {
     static getUsers() {
         return { users: users }
     }
-    static save(user) {
+    static saveUser(user) {
         users.push(user)
         return { user: user }
     }

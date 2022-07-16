@@ -3,7 +3,7 @@ module.exports = class PersonalService {
     static getPersonals() {
         return { personals: personals }
     }
-    static save(personal) {
+    static savePersonal(personal) {
         personals.push(personal)
         return { personal: personal }
     }

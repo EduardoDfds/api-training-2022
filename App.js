@@ -2,9 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const { json } = require("express");
 
-const UserRoute = require("./routes/UserRoute.js")
-const PersonalRoute = require("./routes/PersonalRoute.js")
-const TrainingRoute = require("./routes/TrainingRoute.js")
+const UserRoute = require("./routes/UserRoute.js");
+const PersonalRoute = require("./routes/PersonalRoute.js");
+const TrainingRoute = require("./routes/TrainingRoute.js");
+const AlunoRoute = require("./routes/AlunoRoute.js");
+const ExercicioRoute = require("./routes/ExercicioRoute.js");
+const AvaliacaoFisica = require("./routes/AvaliacaoFisicaRoute.js")
+
 const porta = process.env.PORT || 3000;
 
 var contador = 1;
