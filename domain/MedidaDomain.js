@@ -4,19 +4,20 @@ const { default: mongoose } = require("mongoose");
 const Mongoose = require("mongoose");
 const Aluno = require("./AlunoDomain");
 
-module.exports = class Exercicio extends Mongoose.Schema{
+module.exports = class Medida extends Mongoose.Schema{
     constructor(){
         super({
-            nome: String,
+            altura: Number,
             peso: Number,
             serie: Number,
-            categoria: String,
-            tipo: String,
-            repeticao: Number,
-            dataCadastro: Date,
+            cintura: Number,
+            braco: Number,
+            quadril: Number,
+            perna:Number,
+            dataAvaliacao: Date,
             dataAtualizacao: Date,
             aluno: Aluno
         });
-        mongoose.model("Exercicio",this);
+        mongoose.model("Medida",this);
     }
 }

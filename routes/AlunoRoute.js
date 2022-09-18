@@ -1,8 +1,15 @@
 const AlunoController = require("../controller/AlunoController.js")
 
 module.exports = class AlunoRoute {
+    
     constructor(app) {
-        app.route("/aluno").get(AlunoController.getAlunos);
-        app.route("/aluno").post(AlunoController.saveAluno);
-    }
+        constructor(app)
+            app.route("/alunos")
+                .get(AlunoController.buscarTodos)
+                .post(AlunoController.salvar)
+                .put(AlunoController.atualizar)
+                .delete(AlunoController.excluir);
+    
+            app.route("/alunos/:idAluno").get(AlunoController.buscarPorId);
+        }
 }

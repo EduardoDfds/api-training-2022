@@ -2,7 +2,12 @@ const AvaliacaoFisicaController = require("../controller/AvaliacaoFisicaControll
 
 module.exports = class AvaliacaoFisicaRoute {
     constructor(app) {
-        app.route("/avaliacaoFisica").get(AvaliacaoFisicaController.getAvaliacaoFisica);
-        app.route("/avaliacaoFisica").post(AvaliacaoFisicaController.saveAvaliacaoFisica);
+        app.route("/avaliacoes")
+            .get(AvaliacaoFisicaController.buscarTodos)
+            .post(AvaliacaoFisicaController.salvar)
+            .put(AvaliacaoFisicaController.atualizar)
+            .delete(AvaliacaoFisicaController.excluir);
+
+        app.route("/avaliacoes/:idAvaliacao").get(AvaliacaoFisicaController.buscarPorId);
     }
 }
