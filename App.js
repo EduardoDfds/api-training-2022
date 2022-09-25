@@ -8,16 +8,10 @@ const { json } = require("express");
 const FabricaConexao = require("./src/conexao/FabricaConexao");
 const porta = process.env.PORT ||3000
 
-const UserRoute = require("./routes/UserRoute.js");
-const PersonalRoute = require("./routes/PersonalRoute.js");
-const TreinoRoute = require("./routes/TreinoRoute.js");
-const AlunoRoute = require("./routes/AlunoRoute.js");
-const ExercicioRoute = require("./routes/ExercicioRoute.js");
-const AvaliacaoFisica = require("./routes/AvaliacaoFisicaRoute.js")
-
-
-
 class App {
+
+
+
     static async init() {
         let app = new express();
         app.use(cors());    
@@ -32,6 +26,45 @@ class App {
                 `Erro ao conectar com o banco de dados: ${error.message}`);
             process.exit(1);
         }
+
+        const Usuario = require("./src/domain/Usuario.js");
+        new Usuario();
+
+        const UserRoute = require("./src/routes/UserRoute.js");
+        new UserRoute(app);
+
+        const Aluno = require("./src/domain/Aluno.js");
+        new Aluno();
+
+        const AlunoRoute = require("./src/routes/AlunoRoute.js");
+        new AlunoRoute(app);
+
+        const Personal = require("./src/domain/Personal.js");
+        new Personal();
+
+        const PersonalRoute = require("./src/routes/PersonalRoute.js");
+        new PersonalRoute(app);
+
+        const Treino = require("./src/domain/Treino");
+        new Treino();
+
+        const TreinoRoute = require("./src/routes/TreinoRoute.js");
+        new TreinoRoute(app);
+
+        const Exercicio = require("./src/domain/Exercicio.js");
+        new Exercicio();
+
+        const ExercicioRoute = require("./src/routes/ExercicioRoute.js");
+        new ExercicioRoute(app);
+
+        const Medida = require("./src/domain/Medida");
+        new Medida();
+
+        const MedidaRoute = require("./src/routes/MedidaRoute.js");
+        new MedidaRoute(app);
+
+
+
 
         app.get("/", (req, res) => {
             res.json({
@@ -49,7 +82,7 @@ class App {
         app.listen(porta, () => {
             console.log(`Servidor inicializado na porta: ${porta}`)
         })
-        //new UserRoute(app)
+        
     }
 }
 App.init();
