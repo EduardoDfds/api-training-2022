@@ -7,7 +7,6 @@ module.exports = class Medida extends Mongoose.Schema{
         super({
             altura: Number,
             peso: Number,
-            serie: Number,
             cintura: Number,
             braco: Number,
             quadril: Number,

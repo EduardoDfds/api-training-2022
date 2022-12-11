@@ -1,0 +1,36 @@
+GET http://localhost:3000/exercicios
+
+###
+
+POST http://localhost:3000/exercicios HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Supino",
+    "peso": "10",
+    "serie": "3",
+    "senha": "123",
+    "categoria": "peito",
+    "tipo": "musculação",
+    "repeticao": "10",
+    "dataCadastro": "2022-12-04T05:37:00.915Z",
+    "dataAtualizacao": "20220919"
+}
+
+###
+PUT http://localhost:3000/exercicios HTTP/1.1
+content-type: application/json
+
+{
+    "_id":"63cff31cc7f7a2d55cbf408",
+    "nome": "Joao"
+   
+}
+
+###
+DELETE  http://localhost:3000/exercicios HTTP/1.1
+content-type: application/json
+
+{
+    "_id":"638cff31cc7f7a2d55cbf408"
+}

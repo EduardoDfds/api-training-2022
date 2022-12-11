@@ -1,0 +1,40 @@
+GET http://localhost:3000/alunos
+
+###
+
+POST http://localhost:3000/alunos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Eduardo",
+    "sobrenome": "Dias",
+    "email": "aluno@gmail.com",
+    "senha": "123",
+    "permissao": "aluno",
+    "telefone": "44999988887",
+    "frequencia": "5",
+    "status": "Ativo",
+    "dataCadastro": "2022-12-04T05:37:00.915Z",
+    "dataAcesso": "20220915",
+    "dataAtualizacao": "20220919"
+}
+
+###
+PUT http://localhost:3000/alunos HTTP/1.1
+content-type: application/json
+
+{
+    "aluno_id":"638cfdb8cc7f7a2d55cbf3fe",
+    "nome": "Joao",
+    "sobrenome": "Dias",
+    "email": "aluno@gmail.com"
+   
+}
+
+###
+DELETE  http://localhost:3000/alunos HTTP/1.1
+content-type: application/json
+
+{
+    "_id":"638d0d90a5a5442facc5a1cf"
+}
